@@ -18,6 +18,13 @@ const createNumberButton = digit => {
   const button = document.createElement('button');
   button.innerHTML = digit;
   button.onclick = () => {
+    fetch('/')
+      .then(response => {
+        console.log('response: ', response);
+      })
+      .catch(error => {
+        console.error('error: ', error)
+      }) 
     console.log(button.innerHTML);
     console.log(typeof button.innerHTML)
     console.log(calculatorDisplay.innerHTML);
